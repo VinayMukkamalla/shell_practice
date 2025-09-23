@@ -28,7 +28,7 @@ VALIDATE(){
 
 dnf list installed mysql
 # install if mysql is not already installed
-if [ $? -ge 0 ]; then
+if [ $? -ne 0 ]; then
     dnf install mysql -y
     VALIDATE $? "mysql"
 else
@@ -37,7 +37,7 @@ else
 
 dnf list installed nginx
 # install if mysql is not already installed
-if [ $? -ge 0 ]; then
+if [ $? -ne 0 ]; then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else
@@ -56,7 +56,7 @@ else
 
 dnf list installed python3
 # install if mysql is not already installed
-if [ $? -ge 0 ]; then
+if [ $? -ne 0 ]; then
     dnf install python3 -y
     VALIDATE $? "python3"
 else
