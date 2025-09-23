@@ -7,7 +7,7 @@ sum=$(($num1+$num2))
 
 echo "sum of $num1 and $num2 is : $sum"
 
-
+echo
 name=vinay
 
 sum=$(($num1+$num2+$name))
@@ -21,7 +21,7 @@ name2=qaiser
 name3=rakesh
 echo "Tutor name is : $name1"
 echo "Tutor name is : $name2"
-echo "Tutor name is : $name1"
+echo "Tutor name is : $name3"
 
 #declaring an array
 name4=("rahul" "pardhu" "experiences")
