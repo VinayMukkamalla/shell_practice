@@ -10,7 +10,7 @@ echo "sum of $num1 and $num2 is : $sum"
 
 name=vinay
 
-sum=(($num1)+$num2+$name)
+sum=$(($num1)+$num2+$name)
 echo " print sum : $sum"
 
 #arrays
