@@ -5,6 +5,11 @@
 
 user=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 if [$user -gt 0]; then
     echo "ERROR:: you are not allowed to run this script use root privilege"
     exit 1
@@ -12,23 +17,35 @@ fi
 
 VALIDATE(){
     if [ $1 -gt 0]; then
-        echo "Installing $2 is Failure"
+        echo -e "Installing $2 ..$R Failure $N"
         exit 1
     else
-        echo "Installing $2 is Success"
+        echo -e "Installing $2 ..$R Success $N"
 
     fi
 
 }
 
-dnf install mysql -y
+dnf list installed mysql
+# install if mysql is not already installed
+if [ $? -ge 0 ]; then
+    dnf install mysql -y
+    VALIDATE $? "mysql"
+else
+    echo "mysql is already installed"
 
-VALIDATE $? "mysql"
 
-dnf install nginx -y
+dnf list installed nginx
+# install if mysql is not already installed
+if [ $? -ge 0 ]; then
+    dnf install nginx -y
+    VALIDATE $? "nginx"
+else
+    echo "nginx is already installed"
 
-VALIDATE $? "nginx"  #using function call and passing parameters to reduce duplicate code and reuse block of code
 
+#using function call and passing parameters to reduce duplicate code and reuse block of code
+# replced by VALIDATE()
 #if [ $? -gt 0]; then
 #    echo "Installing nginx is Failure"
 #    exit 1
@@ -37,13 +54,19 @@ VALIDATE $? "nginx"  #using function call and passing parameters to reduce dupli
 #
 #fi
 
-dnf install python3 -y
+dnf list installed python3
+# install if mysql is not already installed
+if [ $? -ge 0 ]; then
+    dnf install python3 -y
+    VALIDATE $? "python3"
+else
+    echo "python3 is already installed"
 
-VALIDATE $? "mpython3"
 
+# replced by VALIDATE()
 #if [ $? -gt 0]; then
-#    echo "Installing mongodb-mongosh is Failure"
+#    echo "Installing python3 is Failure"
 #    exit 1
 #else
-#
+#    echo "Installing python3 is Success"
 #fi
