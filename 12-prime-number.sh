@@ -14,11 +14,9 @@ done
 
 if [ $number -gt 1 ]; then
 
-    for i in { 1..$number };
-    do
+    for (( i=1; i<$((number + 1)); i++ )); do
 
-        for j in { 1..$number };
-        do
+        for (( j=1; j<$((number + 1)); j++ )); do
 
             if [$(($j*$i)) -eq $number]; then
                 counter+=1
