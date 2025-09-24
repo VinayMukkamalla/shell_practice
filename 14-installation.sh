@@ -6,13 +6,13 @@
 user=$(id -u)
 
 
-if [$user -gt 0]; then
+if [ $user -gt 0 ]; then
     echo "ERROR:: you are not allowed to run this script use root privilege"
     exit 1
 fi
 
 VALIDATE(){
-    if [ $1 -gt 0]; then
+    if [ $1 -gt 0 ]; then
         echo -"Installing $2 ..Failure"
         exit 1
     else
