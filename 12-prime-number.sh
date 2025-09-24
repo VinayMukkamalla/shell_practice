@@ -19,7 +19,7 @@ if [ $number -gt 1 ]; then
         for (( j=1; j<$((number + 1)); j++ )); do
 
             if [ $(($j*$i)) -eq $number ]; then
-                counter+=1
+                counter=$(($counter + 1))
                 echo "$counter and $(($i*$j))"
             fi
 
