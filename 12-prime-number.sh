@@ -8,13 +8,13 @@ counter=0  #to hold number of facrors a number has
 
 if [ $number -gt 1 ]; then
 
-    for i in {1..$number}
+    for i in {1..$number};
     do
 
-        for j in {1..$number}
+        for j in {1, $number};
         do
 
-            if [$((j*i)) -eq $number]; then
+            if [$(($j*$i)) -eq $number]; then
                 counter+=1
             fi
 
