@@ -6,6 +6,13 @@ read number
 
 counter=0  #to hold number of facrors a number has
 
+for j in { 1..$number };
+do
+
+    echo "$i"
+
+done
+
 if [ $number -gt 1 ]; then
 
     for i in { 1..$number };
