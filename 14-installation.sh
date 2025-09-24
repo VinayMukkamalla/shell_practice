@@ -30,6 +30,7 @@ if [ $? -ne 0 ]; then
 else
     echo "mysql is already installed"
 
+fi
 
 dnf list installed nginx
 # install if mysql is not already installed
@@ -39,6 +40,7 @@ if [ $? -ne 0 ]; then
 else
     echo "nginx is already installed"
 
+fi
 
 #using function call and passing parameters to reduce duplicate code and reuse block of code
 # replced by VALIDATE()
@@ -58,6 +60,7 @@ if [ $? -ne 0 ]; then
 else
     echo "python3 is already installed"
 
+fi
 
 # replced by VALIDATE()
 #if [ $? -gt 0]; then
