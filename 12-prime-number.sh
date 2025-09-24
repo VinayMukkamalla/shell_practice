@@ -6,11 +6,6 @@ read number
 
 counter=0  #to hold number of facrors a number has
 
-for (( j=1; j<$((number + 1)); j++ )); do
-
-    echo "$j"
-
-done
 
 if [ $number -gt 1 ]; then
 
@@ -19,8 +14,8 @@ if [ $number -gt 1 ]; then
         for (( j=1; j<$((number + 1)); j++ )); do
 
             if [ $(($j*$i)) -eq $number ]; then
+
                 counter=$(($counter + 1))
-                echo "$counter and $(($i*$j))"
             fi
 
         done
