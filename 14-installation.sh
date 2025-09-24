@@ -5,10 +5,6 @@
 
 user=$(id -u)
 
-R="\e[31m"
-G="\e[32m"
-Y="\e[33m"
-N="\e[0m"
 
 if [$user -gt 0]; then
     echo "ERROR:: you are not allowed to run this script use root privilege"
@@ -17,10 +13,10 @@ fi
 
 VALIDATE(){
     if [ $1 -gt 0]; then
-        echo -e "Installing $2 ..$R Failure $N"
+        echo -"Installing $2 ..Failure"
         exit 1
     else
-        echo -e "Installing $2 ..$R Success $N"
+        echo  "Installing $2 ..Success "
 
     fi
 
