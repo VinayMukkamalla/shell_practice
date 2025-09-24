@@ -18,7 +18,7 @@ if [ $number -gt 1 ]; then
 
         for (( j=1; j<$((number + 1)); j++ )); do
 
-            if [$(($j*$i)) -eq $number]; then
+            if [ $(($j*$i)) -eq $number ]; then
                 counter+=1
             fi
 
@@ -28,7 +28,7 @@ fi
 
 if [ counter -eq 2 ]; then
     echo " given number $number is a prime number"
-elif[ $number -eq 1 ]; then
+elif [ $number -eq 1 ]; then
     echo " given number $number is a prime number"
 else
     echo " given number $number is not a prime number"
