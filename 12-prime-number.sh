@@ -26,7 +26,7 @@ if [ $number -gt 1 ]; then
     done
 fi
 
-if [ counter -eq 2 ]; then
+if [ $counter -eq 2 ]; then
     echo " given number $number is a prime number"
 elif [ $number -eq 1 ]; then
     echo " given number $number is a prime number"
