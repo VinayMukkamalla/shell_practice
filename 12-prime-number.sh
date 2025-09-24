@@ -28,7 +28,7 @@ fi
 
 if [ $counter -eq 2 ]; then
     echo " given number $number is a prime number"
-elif [ $counter -eq 1 ]; then
+elif [ $number -eq 1 ]; then
     echo " given number $number is a prime number"
 else
     echo " given number $number is not a prime number"
