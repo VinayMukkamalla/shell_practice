@@ -6,7 +6,7 @@ read number
 
 counter=0  #to hold number of facrors a number has
 
-for (( j=1; j<${number}; j++ )); do
+for (( j=1; j<$((number + 1)); j++ )); do
 
     echo "$j"
 
