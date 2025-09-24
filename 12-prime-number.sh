@@ -9,7 +9,7 @@ counter=0  #to hold number of facrors a number has
 for j in { 1..$number };
 do
 
-    echo "$i"
+    echo "$j"
 
 done
 
