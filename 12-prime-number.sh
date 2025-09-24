@@ -8,16 +8,18 @@ counter=0  #to hold number of facrors a number has
 
 if [ $number -gt 1 ]; then
 
-    for [ i=1;i<=$number;i++]{
+    for i in {1..$number}
+    do
 
-        for[ j=1;j<=$number; j++]{
+        for j in {1..$number}
+        do
 
-            if [$(j*i) -eq $number]; then
+            if [$((j*i)) -eq $number]; then
                 counter+=1
             fi
 
-        }
-    }
+        done
+    done
 fi
 
 if [ counter -eq 2 ]; then
