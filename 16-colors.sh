@@ -12,7 +12,7 @@ if [ $user -gt 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $1 -gt 0]; then
+    if [ $1 -gt 0 ]; then
         echo -e "Installing $2 ..$R Failure $N"
         exit 1
     else
