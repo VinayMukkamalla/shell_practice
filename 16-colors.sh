@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [$user -gt 0]; then
+if [ $user -gt 0 ]; then
     echo "ERROR:: you are not allowed to run this script use root privilege"
     exit 1
 fi
@@ -29,6 +29,7 @@ if [ $? -ne 0 ]; then
     VALIDATE $? "mysql"
 else
     echo -e "mysql is already installed... $Y SKIPPING $N"
+fi
 
 dnf list installed nginx
 # install if nginx is not already installed
@@ -37,6 +38,7 @@ if [ $? -ne 0 ]; then
     VALIDATE $? "nginx"
 else
     echo -e "nginx is already installed ... $Y SKIPPING $N"
+fi
 
 dnf list installed python3
 # install if nginx is not already installed
@@ -45,4 +47,5 @@ if [ $? -ne 0 ]; then
     VALIDATE $? "python3"
 else
     echo -e "python3 is already installed ... $Y SKIPPING $N"
+fi
 
