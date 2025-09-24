@@ -20,6 +20,7 @@ if [ $number -gt 1 ]; then
 
             if [ $(($j*$i)) -eq $number ]; then
                 counter+=1
+                echo "$counter and $(($i*$j))"
             fi
 
         done
