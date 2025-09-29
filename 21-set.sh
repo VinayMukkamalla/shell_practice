@@ -2,7 +2,7 @@
 
 set -e
 
-trap $LINENO $BASH_COMMAND
+trap 'error' ERR $LINENO $BASH_COMMAND
 
 echo "we will know about set -e option to replace VALIDATE function"
 
