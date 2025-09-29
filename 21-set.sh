@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipeline
+set -e
 
 trap $LINENO $BASH_COMMAND
 
