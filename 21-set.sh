@@ -2,7 +2,7 @@
 
 set -e
 
-trap 'There is an error in $LINENO and the command errored is $BASH_COMMAND' ERR 
+trap 'echo "There is an error in $LINENO, and the command errored is $BASH_COMMAND"' ERR 
 
 echo "we will know about set -e option to replace VALIDATE function"
 
