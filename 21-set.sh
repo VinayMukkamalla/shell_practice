@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 echo "we will know about set -e option to replace VALIDATE function"
 
