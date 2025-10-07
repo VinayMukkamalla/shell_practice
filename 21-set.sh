@@ -2,10 +2,10 @@
 
 set -e
 
-error(){
-    #error function
-   # echo "there is an error $LINENO, command is : $BASH_COMMAND"
-}
+# error(){
+#     #error function
+#    # echo "there is an error $LINENO, command is : $BASH_COMMAND"
+# }
 
 # trap will execuete when there is an error trap is a command shell will call trap by default ehen there is an ERR
 
