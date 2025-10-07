@@ -4,12 +4,12 @@ set -e
 
 error(){
     #error function
-    echo "there is an error $LINENO, command is : $BASH_COMMAND"
+   # echo "there is an error $LINENO, command is : $BASH_COMMAND"
 }
 
 # trap will execuete when there is an error trap is a command shell will call trap by default ehen there is an ERR
 
-trap error ERR $LINENO $BASH_COMMAND
+trap echo "there is an error $LINENO, command is : $BASH_COMMAND" ERR 
 
 echo "we will know about set -e option to replace VALIDATE function"
 
