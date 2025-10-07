@@ -1,4 +1,4 @@
-sh 22-script1.sh
+source ./sh 22-script1.sh
 
 echo "MY Country is : $NAME"
 
