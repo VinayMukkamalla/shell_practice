@@ -9,7 +9,7 @@ error(){
 
 # trap will execuete when there is an error trap is a command shell will call trap by default ehen there is an ERR
 
-trap error ERR 
+trap error ERR $LINENO $BASH_COMMAND
 
 echo "we will know about set -e option to replace VALIDATE function"
 
