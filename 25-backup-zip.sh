@@ -11,7 +11,8 @@ LOG_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 START_TIME=$(date +%s)
 mkdir -p $LOG_FOLDER
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+# LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOG_FOLDER/backup.log"
 
 echo " script started execution at : $(date)" | tee -a $LOG_FILE
 
