@@ -12,7 +12,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 START_TIME=$(date +%s)
 mkdir -p $LOG_FOLDER
 # LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
-LOG_FILE="$LOG_FOLDER/backup.log"
+LOG_FILE="$LOG_FOLDER/backup.log" #modified to run as script as command 
 
 echo " script started execution at : $(date)" | tee -a $LOG_FILE
 
@@ -72,7 +72,7 @@ if [ ! -z "${FILES}" ]; then
     
 
 else
-    echo " $Y NO files are present in $SOURCE_DIR older than $DAYS days $N "
+    echo -e " $Y NO files are present in $SOURCE_DIR older than $DAYS days $N "
 fi
 
 
