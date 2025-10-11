@@ -27,12 +27,12 @@ DEST_DIR=$2
 DAYS=${3:-14}
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo "$SOURCE_DIR does not exist"
+    echo " source path :  $SOURCE_DIR does not exist"
     exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then
-    echo "$DEST_DIR does not exist"
+    echo " Destination path : $DEST_DIR does not exist"
     exit 1
 fi
 
