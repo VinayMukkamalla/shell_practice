@@ -37,7 +37,7 @@ if [ ! -d $DEST_DIR ]; then
 fi
 
 usage(){
-    echo  -e " $R ERROR:: file $0 usage manadatory parameters <source dir> <destination dir> <days> $N (by default 14 days if not provided )"
+    echo  -e " $R ERROR:: file usage manadatory parameters $G $0 <source dir> <destination dir> $Y <days>  (by default 14 days if not provided ) $N "
     exit 1
 }
 
