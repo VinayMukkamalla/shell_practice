@@ -50,12 +50,16 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ ! -z "${FILES}" ]; then
     echo " files found "
+    TIME_STAMP=$(date +%F-%H-%M)
+    ZIP_FILE_NAME="$DEST_DIR/app-log-$TIME_STAMP.zip"
+    echo "ZIP file name : $ZIP_FILE_NAME "
+    echo $FILES | zip -@ -j "$ZIP_FILE_NAME"
 else
     echo " $Y NO files are present in $SOURCE_DIR older than $DAYS days $N "
 fi
 
 
-echo " $FILES will be deleted "
+
 
 
 
