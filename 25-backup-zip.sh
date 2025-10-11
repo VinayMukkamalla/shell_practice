@@ -53,7 +53,22 @@ if [ ! -z "${FILES}" ]; then
     TIME_STAMP=$(date +%F-%H-%M)
     ZIP_FILE_NAME="$DEST_DIR/app-log-$TIME_STAMP.zip"
     echo "ZIP file name : $ZIP_FILE_NAME "
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME" # junk (don't record) directory names
+
+    if [ -f $ZIP_FILE_NAME ]
+    then
+        echo -e " Archieval of files $G...successfull$N "
+    else
+        echo -e "file Archeival $R...Failure$N "
+
+    while IFS= read -r filepath 
+    do
+        echo "file $filepath will be deleted"
+        rm -rf $filepath
+        echo "$filepath deletion completed"
+
+    done <<<$FILES
+
 else
     echo " $Y NO files are present in $SOURCE_DIR older than $DAYS days $N "
 fi
