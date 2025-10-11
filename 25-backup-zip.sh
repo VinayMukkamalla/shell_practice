@@ -37,7 +37,7 @@ if [ ! -d $DEST_DIR ]; then
 fi
 
 usage(){
-    echo "ERROR:: file $0 usage manadatory parameters <source dir> <destination dir> <days>(by default 14 days if not provided )"
+    echo  -e " $R ERROR:: file $0 usage manadatory parameters <source dir> <destination dir> <days> $N (by default 14 days if not provided )"
     exit 1
 }
 
@@ -48,7 +48,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-
+backup_file=$(echo "$0+ $(date +%F -%H-%M)")
 
 # source dir
 
