@@ -41,7 +41,7 @@ usage(){
     exit 1
 }
 
-if [ $# -le 2 ]; then
+if [ $# -lt 2 ]; then
     usage
 fi
 
