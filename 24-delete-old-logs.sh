@@ -20,7 +20,7 @@ if [ $user -gt 0 ]; then
     exit 1
 fi
 
-SOURCE_DIR=${1: -/home/ec2-user/app-logs/}
+SOURCE_DIR=/home/ec2-user/app-logs
 
 if [ ! -d $SOURCE_DIR ]; then
     echo "source directory $SOURCE_DIR does not exist "
