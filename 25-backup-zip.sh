@@ -48,6 +48,8 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
+echo " $FILES will be deleted "
+
 backup_file=$(echo "$0+ $(date +%F -%H-%M)")
 
 # source dir
