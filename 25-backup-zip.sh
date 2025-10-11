@@ -58,16 +58,17 @@ if [ ! -z "${FILES}" ]; then
     if [ -f $ZIP_FILE_NAME ]
     then
         echo -e " Archieval of files $G...successfull$N "
+        while IFS= read -r filepath 
+        do
+            echo "file $filepath will be deleted"
+            rm -rf $filepath
+            echo " $filepath : deleted"
+
+        done <<<$FILES
     else
         echo -e "file Archeival $R...Failure$N "
-
-    while IFS= read -r filepath 
-    do
-        echo "file $filepath will be deleted"
-        rm -rf $filepath
-        echo "$filepath deletion completed"
-
-    done <<<$FILES
+    fi
+    
 
 else
     echo " $Y NO files are present in $SOURCE_DIR older than $DAYS days $N "
