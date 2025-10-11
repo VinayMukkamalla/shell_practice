@@ -48,9 +48,16 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
+if [ ! -z "${FILES}" ]; then
+    echo " files found "
+else
+    echo " NO files are present in $SOURCE_DIR older than $DAYS days "
+fi
+
+
 echo " $FILES will be deleted "
 
-backup_file=$(echo "$0+ $(date +%F -%H-%M)")
+
 
 # source dir
 
