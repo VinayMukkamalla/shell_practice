@@ -51,7 +51,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 if [ ! -z "${FILES}" ]; then
     echo " files found "
 else
-    echo " NO files are present in $SOURCE_DIR older than $DAYS days "
+    echo " $Y NO files are present in $SOURCE_DIR older than $DAYS days $N "
 fi
 
 
