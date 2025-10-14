@@ -14,7 +14,7 @@ do
     if [ $USAGE -ge $DISK_THRESHOLD ]; then
         MESSAGE="High Disk utilisation on $PARTITION : $USAGE%"
     else
-        echo "Disk usage normal"
+        echo "Disk usage normal $PARTITION : $USAGE%"
     fi
 
 done <<< $DISK_USAGE
