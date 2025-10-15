@@ -1,0 +1,34 @@
+#!/bin/bash
+
+TO_ADDRESS=$1
+SUBJECT=$2
+ALERT_TYPE=$3
+MESSAGE_BODY=$4
+IP_ADDRESS=$5
+TO_TEAM=$6
+
+FINAL_BODY=$( sed -e "s/TO_TEAM/$TO_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e "s/IP_ADDRESS/$IP_ADDRESS/g" -e "s/MESSAGE/$MESSAGE_BODY/g" template.htm)
+
+# defaults
+# auth           on
+# tls            on
+# tls_trust_file /etc/ssl/certs/ca-bundle.crt
+# logfile        /var/log/msmtp.log
+
+# account        gmail
+# host           smtp.gmail.com
+# port           587
+# from           vinaygoudmukkamalla@gmail.com
+# user           vinaygoudmukkamalla@gmail.com
+# password       your_app_password
+
+# account default : gmail
+
+
+{
+echo "To: $TO_ADDRESS"
+echo "Subject: $SUBJECT"
+echo "Content-Type: text/html"
+echo ""
+echo "$FINAL_BODY"
+} | msmtp "$TO_ADDRESS"
